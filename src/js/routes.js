@@ -42,7 +42,7 @@ router.post('/:id', async (req, res) => {
         for (const isEmptyField in values) {
             const informationField = values[isEmptyField];
             if (informationField === '') {
-                res.status(404).json("Can't be empty fields");
+               return res.status(404).json("Can't be empty fields");
             }
         }
         let result = await executeSQL(sql.createDataFile, values);
@@ -88,7 +88,7 @@ router.put('/:id', async (req, res) => {
         for (const isEmptyField in values) {
             const informationField = values[isEmptyField];
             if (informationField === '') {
-                res.status(404).json("Can't be empty fields");
+               return res.status(404).json("Can't be empty fields");
             }
         }
         let result = await executeSQL(sql.updateDataFileByID, values);
