@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/user', require('./routes'));
+app.use('/datafile', require('./routes'));
 
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
